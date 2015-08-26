@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+$brand-color: #F7931A;
+$font-stack: Montserrat, sans-serif;
+
+body {
+  margin: 0;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+a {
+  color: #B9B9B9;
+  font-family: $font-stack;
+  text-decoration: none;
+}
+
+a.active {
+  color: #737373;
+}

@@ -1,0 +1,27 @@
+@import 'constants';
+
+.type-selection {
+  width: 300px;
+
+  .split {
+    position: absolute;
+  }
+
+  .master,
+  .apprentice {
+    cursor: pointer;
+    display: inline-block;
+    height: 150px;
+    text-align: center;
+    width: 150px;
+
+    &:focus {
+      background-color: $brand-color;
+      color: white;
+    }
+  }
+
+  .master {
+    background-color: $brand-color;
+  }
+}

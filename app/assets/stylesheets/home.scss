@@ -1,16 +1,4 @@
-body {
-  margin: 0;
-}
-
-.clearfix {
-  overflow: auto;
-  zoom: 1;
-}
-
-a {
-  color: #B9B9B9;
-  text-decoration: none;
-}
+@import 'constants';
 
 nav {
   box-shadow: 1px 1px 3px #E1E1E1;
@@ -27,6 +15,7 @@ nav {
     padding-top: 25px;
 
     a {
+      font-size: 14px;
       margin: 0 10px;
     }
   }
@@ -35,18 +24,38 @@ nav {
     float: right;
 
     a {
-      background-color: darkgrey;
+      background-color: $brand-color;
       color: white;
       float: right;
-      padding: 21px;
+      font-size: 14px;
+      padding: 7px 50px;
+
+      * {
+        display: inline-block;
+        padding: 0 5px;
+      }
     }
   }
 }
 
 .content {
   .heading {
+    font-family: Lato, sans-serif;
     margin-top: 50px;
     text-align: center;
+
+    h1 {
+      color: $brand-color;
+      font-size: 46px;
+      margin: 10px 0;
+    }
+
+    small {
+      color: #4b4b4b;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      word-spacing: 0.15em;
+    }
   }
 
   .details {
