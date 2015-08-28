@@ -5,9 +5,15 @@
 <h4>Choose your path</h4>
 
 <div class="type-selection">
-  <div class="master">Master</div>
+  <div class="master">
+    <i class="fa fa-user-secret"></i>
+    Master
+  </div>
   <div class="split">OR</div>
-  <div class="apprentice">Apprentice</div>
+  <div class="apprentice">
+    <i class="fa fa-user"></i>
+    Apprentice
+  </div>
 </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
