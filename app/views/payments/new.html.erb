@@ -1,4 +1,22 @@
+<%= render 'partials/navbar' %>
+
 <%= form_tag payments_path do %>
+
+    <h4>Choose your path</h4>
+
+    <div class="type-selection">
+      <div id="master" class="master">
+        <i class="fa fa-user-secret"></i>
+        Master
+      </div>
+      <div class="split">OR</div>
+      <div id="apprentice" class="apprentice">
+        <i class="fa fa-user"></i>
+        Apprentice
+      </div>
+      <%= hidden_field_tag(:account_type, 'master') %>
+    </div>
+
     <article>
       <label class="amount">
         <span>Amount: $5.00</span>

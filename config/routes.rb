@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # Payment Routes
   resources :payments
+  mount StripeEvent::Engine, at: '/hooks'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

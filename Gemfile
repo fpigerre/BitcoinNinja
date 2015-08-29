@@ -48,5 +48,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Peripheral Gems
 gem 'devise'
+
+# Payment-related Gems
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem 'wicked'
+gem 'stripe_event'

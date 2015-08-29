@@ -1,18 +1,20 @@
 class PaymentsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
   end
 
   def create
-    # Get the credit card details submitted bly the form
-    token = params[:stripeToken]
-
+    # Email does not have to be the same as registered email
     if current_user.customer_id == ''
       customer = Stripe::Customer.create(
-          :source => token,
-          :plan => 'master',
-          :email => 'payinguser@example.com'
+          :source => params[:stripeToken],
+          :plan => params[:account_type],
+          :email => params[:stripeEmail]
       )
       current_user.update(customer_id: customer.id)
+      current_user.update(plan: params[:account_type])
+      current_user.update(plan_expiry: Time.now + 1.month)
     else
       customer = Stripe::Customer.retrieve(current_user.customer_id)
     end
