@@ -78,4 +78,11 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # TODO: Add devise mailer URL
+  config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => '127.0.0.1',
+      :port    => 25,
+      :domain  => 'yourdomain.com'
+  }
 end

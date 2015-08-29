@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
+
+  # Global and Important Routes
+  root 'home#index'
+
+  # Standard routes
   get 'home/about'
-  get 'guides/index'
+  get 'guides/index', as: 'user_root'
   get 'guides/about'
 
-  devise_for :users
+  # Authentication and Devise routes
+  devise_for :users, :path => '', :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
