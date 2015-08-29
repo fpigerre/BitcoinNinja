@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     if user_signed_in?
-      redirect_to guides_index_path
+      redirect_to user_root_path
     else
       respond_to do |format|
         format.html # index.html.erb
