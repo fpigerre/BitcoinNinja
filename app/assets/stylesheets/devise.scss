@@ -1,71 +1,10 @@
-@import 'constants';
-@import 'mixins';
+@import 'partials/constants';
+@import 'partials/mixins';
+@import 'partials/navbar';
 
 .center-form {
   margin: auto;
   width: 300px;
-}
-
-.type-selection {
-  font-family: Montserrat, 'Open Sans', sans-serif;
-  font-size: 0;
-  height: 150px;
-  position: relative;
-  width: 300px;
-
-  .split {
-    background-color: white;
-    border: 1px solid #CDCDCD;
-    border-radius: 5px;
-    color: darkgrey;
-    float: right;
-    font-size: 16px;
-    padding: 3px 5px;
-    position: absolute;
-
-    top: 65px;
-    left: 130px;
-  }
-
-  .master,
-  .apprentice {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    height: 100%;
-    text-align: center;
-    width: 50%;
-
-    @include transition(all, ease, 400ms);
-
-    &:focus {
-      background-color: $brand-color;
-      color: white;
-    }
-
-    i {
-      display: block;
-      font-size: 72px;
-      padding-top: 25px;
-      padding-bottom: 10px;
-    }
-  }
-
-  $border-radius: 5px;
-
-  .master {
-    background-color: $brand-color;
-    border-top-left-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
-    color: white;
-  }
-
-  .apprentice {
-    background-color: #E7E7E7;
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
-    color: gray;
-  }
 }
 
 form {
