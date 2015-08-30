@@ -1,12 +1,21 @@
 <% content_for :styletags do %>
+    <%= stylesheet_link_tag 'select-theme-default', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'devise', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag 'payments', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
+
+<% content_for :jstags do %>
+    <%= javascript_include_tag 'tether.min', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'select.min', 'data-turbolinks-track' => true %>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <%= javascript_include_tag 'payments', 'data-turbolinks-track' => true %>
 <% end %>
 
 <%= render 'partials/navbar' %>
 
-<%= form_tag payments_path do %>
-
-    <h4>Choose your path</h4>
+<div class="content">
+  <div class="center-form">
+    <h2>Choose your path</h2>
 
     <div class="type-selection">
       <div id="master" class="master">
@@ -20,16 +29,51 @@
       </div>
       <%= hidden_field_tag(:account_type, 'master') %>
     </div>
+  </div>
 
-    <article>
-      <label class="amount">
-        <span>Amount: $5.00</span>
-      </label>
-    </article>
+  <!-- TODO: Use Rails form helper tags -->
+  <%= form_tag payments_path, id: 'payment-form' do %>
+      <div class="blue-top">
+        <h3>Payment<br>Details</h3>
+        <span class="payment-errors"></span>
+      </div>
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="A month's subscription"
-            data-amount="500"
-            data-locale="auto"></script>
-<% end %>
+      <div class="bottom-section">
+        <div class="form-row">
+          <label>
+            <span>Card Number</span>
+            <input type="text" size="20" data-stripe="number">
+          </label>
+        </div>
+
+        <div class="form-row second-row">
+          <label>
+            <span>Expiry Date</span>
+            <select class="month-select" data-stripe="exp-month">
+              <option value="01" selected="selected">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </label>
+          <label>
+            <input id="year-input" type="text" size="4" data-stripe="exp-year" placeholder="Year">
+          </label>
+          <label>
+            <span>CVC</span>
+            <input type="text" size="4" data-stripe="cvc"/>
+          </label>
+        </div>
+      </div>
+
+      <button id="payment-submit" class="submit" type="submit">Submit Payment</button>
+  <% end %>
+</div>

@@ -22,6 +22,10 @@ form {
   .field {
     position: relative;
 
+    &.remember-me {
+      padding-top: 10px;
+    }
+
     em {
       display: none;
       position: absolute;
@@ -43,7 +47,7 @@ form {
 input[type=email],
 input[type=password] {
   background-color: #E7E7E7;
-  border: 1px solid #cdcdcd;
+  border: 1px solid #CDCDCD;
   border-radius: 3px;
   box-shadow: 0.5px 1px 1px #C3C3C3 inset;
   margin-top: 10px;
@@ -51,19 +55,47 @@ input[type=password] {
   width: 290px;
 }
 
-input[type=submit] {
+label {
+  color: #B9B9B9;
+  font-family: Lato, 'Open Sans', sans-serif;
+}
+
+input[type=submit],
+.submit {
   background-color: $brand-color;
   border: none;
   border-radius: 2px;
   color: white;
   cursor: pointer;
-  margin-top: 20px;
+  margin: 30px auto 0 auto;
   padding: 10px;
-  width: 302px;
+  text-transform: uppercase;
+  width: 305px;
+
+  @include transition(all, ease, 400ms);
 
   &:hover {
-    // TODO: Hover animation here
+    background-color: rgba(255, 153, 26, 0.95);
   }
 }
 
-// TODO: Layout shared links
+.shared-links {
+  text-align: center;
+
+  a {
+    display: block;
+    padding: 7px 0;
+    text-transform: uppercase;
+  }
+}
+
+// TODO: Style explanation as flash message
+#error_explanation {
+  font-family: Lato, 'Open Sans', sans-serif;
+  
+  h2 {
+    color: #FF4136;
+    font-size: 16px;
+    margin: 15px 0;
+  }
+}

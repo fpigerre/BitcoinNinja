@@ -2,10 +2,27 @@
 @import 'partials/mixins';
 @import 'partials/navbar';
 
+$heading-stack: Montserrat, 'Open Sans', sans-serif;
+$alternate-stack: Lato, 'Open Sans', sans-serif;
+
+body {
+  background-image: image-url('city.jpg');
+  background-size: cover;
+}
+
+.select-option {
+  font-family: $alternate-stack;
+}
+
+.content {
+  padding: 50px 10%;
+}
+
 .type-selection {
-  font-family: Montserrat, 'Open Sans', sans-serif;
+  font-family: $heading-stack;
   font-size: 0;
   height: 150px;
+  margin: auto;
   position: relative;
   width: 300px;
 
@@ -61,5 +78,104 @@
     border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     color: gray;
+  }
+}
+
+.center-form {
+  background-color: white;
+  box-shadow: 3px 3px 10px rgba(33, 33, 33, 0.7);
+  height: 90vh;
+  vertical-align: top;
+  width: 100%;
+}
+
+#payment-form {
+  background-color: white;
+  border-radius: 20px;
+  height: 300px;
+  margin: auto;
+
+  .blue-top {
+    background-color: #018FFD;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    height: 100px;
+
+    h3 {
+      color: white;
+      font-family: $heading-stack;
+      font-size: 20px;
+      margin: 0;
+      padding: 25px 0 25px 35px;
+      text-transform: uppercase;
+    }
+  }
+
+  .bottom-section {
+    padding: 0 35px;
+  }
+
+  .form-row {
+    padding-top: 10px;
+
+    &.second-row label {
+      margin-right: 30px;
+      width: 25%;
+    }
+
+    label {
+      display: inline-block;
+      @include placeholder-font(#CDCDCD, Montserrat, sans-serif, 20px, 400);
+
+      span {
+        color: #989898;
+        display: block;
+        font-family: $heading-stack;
+        font-size: 13px;
+        padding: 10px 0;
+        text-transform: uppercase;
+      }
+
+      input {
+        border: 2px solid #C3C3C3;
+        border-radius: 6px;
+        color: #111111;
+        font-size: 20px;
+        font-weight: 700;
+        padding: 8px;
+        width: 100%;
+
+        &:focus {
+          border-color: #81C8FE;
+          outline: 0 !important;
+        }
+      }
+
+      .month-select + .select-target {
+        height: 43px;
+        margin-bottom: 6px;
+        padding: 10px 0 0 15px;
+        width: 100%;
+      }
+    }
+  }
+
+  .submit {
+    margin: 20px 7%;
+    position: absolute;
+    width: 30%;
+  }
+}
+
+@media (min-width: 600px) {
+  .center-form {
+    display: inline-block;
+    margin: 0;
+    width: 40%;
+  }
+
+  #payment-form {
+    display: inline-block;
+    width: 55%;
   }
 }

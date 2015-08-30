@@ -37,3 +37,8 @@
     font-weight: $weight;
   }
 }
+
+@mixin opacity($value) {
+  opacity: $value;
+  filter: alpha(opacity=$value * 100); /* For IE8 and earlier */
+}
