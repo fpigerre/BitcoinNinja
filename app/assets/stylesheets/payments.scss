@@ -32,7 +32,7 @@
     text-align: center;
     width: 50%;
 
-    @include transition(all, ease, 400ms);
+    @include transition(all, ease, 300ms);
 
     &:focus {
       background-color: $brand-color;

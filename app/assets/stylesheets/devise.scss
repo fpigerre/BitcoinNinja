@@ -2,24 +2,68 @@
 @import 'partials/mixins';
 @import 'partials/navbar';
 
+h2 {
+  font-family: Lato, 'Open Sans', sans-serif;
+  color: $brand-color;
+  margin: 40px 0;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 0.25em;
+}
+
 .center-form {
-  margin: auto;
+  margin: 50px auto;
   width: 300px;
 }
 
 form {
   width: 300px;
+
+  .field {
+    position: relative;
+
+    em {
+      display: none;
+      position: absolute;
+      top: 3px;
+      @include transition(all, ease, 300ms);
+    }
+  }
+
+  .field:hover,
+  .field:focus {
+    em {
+      display: block;
+    }
+  }
 }
+
+@include placeholder-font(#696969, Lato, sans-serif, 14px, 500);
 
 input[type=email],
 input[type=password] {
   background-color: #E7E7E7;
+  border: 1px solid #cdcdcd;
   border-radius: 3px;
-  padding: 5px 0 5px 5px;
+  box-shadow: 0.5px 1px 1px #C3C3C3 inset;
+  margin-top: 10px;
+  padding: 10px 0 10px 10px;
+  width: 290px;
 }
 
 input[type=submit] {
   background-color: $brand-color;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
   padding: 10px;
-  width: 100%;
+  width: 302px;
+
+  &:hover {
+    // TODO: Hover animation here
+  }
 }
+
+// TODO: Layout shared links

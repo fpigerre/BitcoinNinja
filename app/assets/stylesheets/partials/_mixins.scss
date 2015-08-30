@@ -5,3 +5,35 @@
   -o-transition: $element $time $type;
   transition: $element $time $type;
 }
+
+@mixin placeholder-font($color, $font-family, $default, $size, $weight) {
+  ::-webkit-input-placeholder {
+    color: $color;
+    font-family: $font-family, $default;
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: $color;
+    font-family: $font-family, $default;
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $color;
+    font-family: $font-family, $default;
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+  :-ms-input-placeholder {
+    color: $color;
+    font-family: $font-family, $default;
+    font-size: $size;
+    font-weight: $weight;
+  }
+}

@@ -15,6 +15,7 @@ $ ->
 
     document.getElementById('account_type').value = 'apprentice'
     apprenticeChecked = true
+    masterChecked = false
 
   master.on 'click', (event) =>
     master.css 'background-color': '#F7931A'
@@ -24,4 +25,5 @@ $ ->
     apprentice.css 'color': 'gray'
 
     document.getElementById('account_type').value = 'master'
-    masterChecked = truemaster
+    masterChecked = true
+    apprenticeChecked = false
