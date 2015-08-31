@@ -5,13 +5,17 @@ apprenticeChecked = false
 $(document).ready ->
     master = $('#master')
     apprentice = $('#apprentice')
+    masterText = $('#master-details')
+    apprenticeText = $('#apprentice-details')
 
     apprentice.on 'click', (event) ->
         apprentice.css 'background-color': '#F7931A'
         apprentice.css 'color': 'white'
+        apprenticeText.css 'display': 'block'
 
         master.css 'background-color': '#E7E7E7'
         master.css 'color': 'gray'
+        masterText.css 'display': 'none'
 
         document.getElementById('account_type').value = 'apprentice'
         apprenticeChecked = true
@@ -20,9 +24,11 @@ $(document).ready ->
     master.on 'click', (event) ->
         master.css 'background-color': '#F7931A'
         master.css 'color': 'white'
+        masterText.css 'display': 'block'
 
         apprentice.css 'background-color': '#E7E7E7'
         apprentice.css 'color': 'gray'
+        apprenticeText.css 'display': 'none'
 
         document.getElementById('account_type').value = 'master'
         masterChecked = true

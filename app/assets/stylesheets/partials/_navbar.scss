@@ -5,9 +5,18 @@ nav {
   box-shadow: 1px 1px 3px #E1E1E1;
   height: 60px;
 
+  .left.logout,
+  .right.logout {
+    display: inline-block;
+  }
+
+  .right.logout {
+    float: right;
+  }
+
   .left {
     margin-left: 10%;
-    padding-top: 25px;
+    padding-top: 20px;
 
     a {
       font-size: 14px;
@@ -16,7 +25,7 @@ nav {
   }
 
   .right {
-    a {
+    .signup {
       background-color: $brand-color;
       color: white;
       display: block;
@@ -29,6 +38,13 @@ nav {
         display: inline-block;
         padding: 0 5px;
       }
+    }
+
+    .logout {
+      float: right;
+      font-size: 14px;
+      margin-top: 20px;
+      margin-right: 50px;
     }
   }
 }
@@ -44,7 +60,7 @@ nav {
     .right {
       float: right;
 
-      a {
+      .signup {
         float: right;
         margin-top: 0;
       }

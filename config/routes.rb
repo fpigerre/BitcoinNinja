@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # Standard routes
-  get 'home/about'
+  get 'home/about', as: 'about'
   get 'guides/index', as: 'user_root'
   get 'guides/about'
 

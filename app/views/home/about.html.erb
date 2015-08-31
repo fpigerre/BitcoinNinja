@@ -1,1 +1,6 @@
 <!-- Overview about page for non-signed in users goes here -->
+<% content_for :styletags do %>
+    <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
+
+<%= render 'partials/navbar' %>
