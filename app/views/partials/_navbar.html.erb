@@ -1,16 +1,14 @@
 <nav>
   <% if user_signed_in? %>
       <div class="left logout">
-        <%= link_to 'HOME', root_path, class: 'active' %>
-        <%= link_to 'HOW IT WORKS', home_about_path %>
+        <%= yield :link_structure %>
       </div>
       <div class="right logout">
         <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete, class: 'logout') %>
       </div>
   <% else %>
       <div class="left">
-        <%= link_to 'HOME', root_path, class: 'active' %>
-        <%= link_to 'HOW IT WORKS', home_about_path %>
+        <%= yield :link_structure %>
       </div>
       <div class="right">
         <%= link_to new_user_registration_path, class: 'signup' do %>

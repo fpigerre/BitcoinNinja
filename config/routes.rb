@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-
   # Global and Important Routes
   root 'home#index'
 
   # Standard routes
-  get 'home/about', as: 'about'
+  get '/about', to: 'home#about', as: 'about'
   get 'guides/index', as: 'user_root'
   get 'guides/about'
 

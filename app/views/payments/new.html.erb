@@ -11,6 +11,11 @@
     <%= javascript_include_tag 'payments', 'data-turbolinks-track' => true %>
 <% end %>
 
+<% content_for :link_structure do %>
+    <%= link_to 'HOME', root_path, class: 'active' %>
+    <%= link_to 'HOW IT WORKS', about_path %>
+<% end %>
+
 <%= render 'partials/navbar' %>
 
 <div class="content">
@@ -27,7 +32,6 @@
         <i class="fa fa-user"></i>
         Apprentice
       </div>
-      <%= hidden_field_tag(:account_type, 'master') %>
     </div>
 
     <!-- TODO: Better wording - benefit/feature -->
@@ -48,7 +52,6 @@
     </div>
   </div>
 
-  <!-- TODO: Use Rails form helper tags -->
   <%= form_tag payments_path, id: 'payment-form' do %>
       <div class="blue-top">
         <h3>Payment<br>Details</h3>
@@ -92,5 +95,6 @@
       </div>
 
       <button id="payment-submit" class="submit" type="submit">Submit Payment</button>
+      <%= hidden_field_tag(:account_type, 'master') %>
   <% end %>
 </div>

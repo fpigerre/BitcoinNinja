@@ -2,6 +2,11 @@
     <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
 <% end %>
 
+<% content_for :link_structure do %>
+    <%= link_to 'HOME', root_path, class: 'active' %>
+    <%= link_to 'HOW IT WORKS', about_path %>
+<% end %>
+
 <%= render 'partials/navbar' %>
 
 <div class="content">

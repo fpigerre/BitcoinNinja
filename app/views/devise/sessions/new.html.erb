@@ -1,3 +1,8 @@
+<% content_for :link_structure do %>
+    <%= link_to 'HOME', root_path, class: 'active' %>
+    <%= link_to 'HOW IT WORKS', about_path %>
+<% end %>
+
 <%= render 'partials/navbar' %>
 
 <h2>Log in</h2>
