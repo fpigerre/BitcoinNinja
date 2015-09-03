@@ -2,6 +2,9 @@ class PaymentsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    if current_user.plan != nil
+      redirect_to user_root_path
+    end
   end
 
   def create
