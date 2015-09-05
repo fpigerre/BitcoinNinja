@@ -15,3 +15,25 @@ header {
     }
   }
 }
+
+.guides {
+  margin: 0 50px;
+
+  .column {
+    display: inline-block;
+    width: 33%;
+
+    article {
+      img {
+        width: 100%;
+      }
+
+      .continue {
+        border: 1px solid $brand-color;
+        border-radius: 10px;
+        color: $brand-color;
+        font-size: 14px;
+      }
+    }
+  }
+}

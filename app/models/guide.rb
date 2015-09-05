@@ -1,6 +1,6 @@
 class Guide
   include ActiveModel::Model
-  attr_accessor :title, :content, :created_at, :permalink, :author
+  attr_accessor :title, :content, :created_at, :permalink, :author, :image
 
   # Used for ATOM-feed id
   def id
