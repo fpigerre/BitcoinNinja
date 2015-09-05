@@ -1,0 +1,11 @@
+<article>
+  <h1>
+    <%= @guide.title %>
+  </h1>
+  <%= render partial: 'meta', locals: { guide: @guide } %>
+  <%= markdown(@guide.content) %>
+  <hr/>
+  <p class="action">
+    <%= link_to '? Back to Overview', guides_path %>
+  </p>
+</article>

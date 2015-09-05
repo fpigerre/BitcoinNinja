@@ -15,10 +15,15 @@ class GuidesController < ApplicationController
     if current_user.plan == nil
       redirect_to new_payment_path
     else
+      @guides = Guide.all
       respond_to do |format|
         format.html # index.html.erb
       end
     end
+  end
+
+  def show
+    @guide = Guide.find_by_name(params[:id])
   end
 
   def about

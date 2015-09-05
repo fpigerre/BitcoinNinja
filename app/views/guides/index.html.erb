@@ -6,10 +6,25 @@
   <nav>
     <div class="left">
       <%= link_to 'Home', root_path, class: 'active' %>
-      <%= link_to 'How it Works', guides_about_path %>
+      <%= link_to 'How it Works', guide_path(:about) %>
     </div>
     <div class="right">
       <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete, class: 'logout') %>
     </div>
   </nav>
 </header>
+
+<% @guides.each do |guide| %>
+    <article>
+      <h1>
+        <%= link_to guide.title, guide_path(guide) %>
+      </h1>
+      <%= render partial: 'meta', locals: {guide: guide} %>
+      <%= markdown(guide.excerpt) %>
+      <% if guide.has_more_text? %>
+          <p>
+            <%= link_to 'Continue reading ?', guide_path(guide) %>
+          </p>
+      <% end %>
+    </article>
+<% end %>

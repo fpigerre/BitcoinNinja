@@ -48,6 +48,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Peripheral Gems
 gem 'devise'
+gem 'haml'
+gem 'redcarpet' # Markdown parsing
+gem 'pygments.rb' # Syntax highlighting
 
 # Payment-related Gems
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'

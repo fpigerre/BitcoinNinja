@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   # Standard routes
   get '/about', to: 'home#about', as: 'about'
-  get 'guides/index', as: 'user_root'
-  get 'guides/about'
+  get 'guides', to: 'guides#index', as: 'user_root'
+  resources :guides, path: '', only: [:index, :show, :about]
 
   # Authentication and Devise routes
   devise_for :users, :path => '', :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' }
