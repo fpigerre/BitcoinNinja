@@ -1,1 +1,13 @@
+<!-- TODO: Add content to receipt page / perhaps a 'getting started' page -->
+
+<% content_for :styletags do %>
+    <%= stylesheet_link_tag 'payments', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
+
+<% content_for :link_structure do %>
+    <%= link_to 'HOME', root_path, class: 'active' %>
+    <%= link_to 'HOW IT WORKS', about_path %>
+<% end %>
+
+<%= render 'partials/navbar' %>
 <h2>Thanks, you paid <strong>$5.00</strong>!</h2>

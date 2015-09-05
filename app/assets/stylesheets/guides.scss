@@ -1,11 +1,17 @@
 @import 'partials/constants';
 @import 'partials/mixins';
+@import 'partials/navbar';
 
 header {
   background-color: $brand-color;
   height: 250px;
 
   nav {
+    background-color: transparent;
+    box-shadow: none;
 
+    a, a.active {
+      color: white;
+    }
   }
 }
