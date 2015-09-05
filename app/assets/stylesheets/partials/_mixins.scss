@@ -6,6 +6,14 @@
   transition: $element $time $type;
 }
 
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}
+
 @mixin placeholder-font($color, $font-family, $default, $size, $weight) {
   ::-webkit-input-placeholder {
     color: $color;

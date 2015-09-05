@@ -5,31 +5,33 @@
 
 <%= render 'partials/navbar' %>
 
-<h2>Log in</h2>
+<div class="content">
+  <h2>Log in</h2>
 
-<div class="center-form">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
-      <div class="field">
-        <%= form.email_field :email, autofocus: true, placeholder: 'Email' %>
-      </div>
+  <div class="center-form">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
+        <div class="field">
+          <%= form.email_field :email, autofocus: true, placeholder: 'Email' %>
+        </div>
 
-      <div class="field">
-        <%= form.password_field :password, autocomplete: 'off', placeholder: 'Password' %>
-      </div>
+        <div class="field">
+          <%= form.password_field :password, autocomplete: 'off', placeholder: 'Password' %>
+        </div>
 
-      <% if devise_mapping.rememberable? -%>
-          <div class="field remember-me">
-            <%= form.check_box :remember_me %>
-            <%= form.label :remember_me %>
-          </div>
-      <% end -%>
+        <% if devise_mapping.rememberable? -%>
+            <div class="field remember-me">
+              <%= form.check_box :remember_me %>
+              <%= form.label :remember_me %>
+            </div>
+        <% end -%>
 
-      <div class="actions">
-        <%= form.submit 'Log in' %>
-      </div>
-  <% end %>
-</div>
+        <div class="actions">
+          <%= form.submit 'Log in' %>
+        </div>
+    <% end %>
+  </div>
 
-<div class="shared-links">
-  <%= render 'devise/shared/links' %>
+  <div class="shared-links">
+    <%= render 'devise/shared/links' %>
+  </div>
 </div>

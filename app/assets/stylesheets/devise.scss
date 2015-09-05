@@ -11,6 +11,10 @@ h2 {
   word-spacing: 0.25em;
 }
 
+.content {
+  margin-top: 100px;
+}
+
 .center-form {
   margin: 50px auto;
   width: 300px;
@@ -55,6 +59,11 @@ input[type=password] {
   width: 290px;
 }
 
+.field_with_errors input {
+  border-color: $error-color;
+  border-width: 2px;
+}
+
 label {
   color: #B9B9B9;
   font-family: Lato, 'Open Sans', sans-serif;
@@ -91,10 +100,16 @@ input[type=submit] {
 // TODO: Style explanation as flash message
 #error_explanation {
   font-family: Lato, 'Open Sans', sans-serif;
-  
+
   h2 {
-    color: #FF4136;
+    color: $error-color;
     font-size: 16px;
     margin: 15px 0;
+  }
+}
+
+@media (min-width: 600px) {
+  .content {
+    margin-top: 0;
   }
 }

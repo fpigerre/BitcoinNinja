@@ -4,7 +4,7 @@
 .content {
   .heading {
     font-family: Lato, sans-serif;
-    margin-top: 50px;
+    margin-top: 100px;
     text-align: center;
 
     h1 {
@@ -23,5 +23,11 @@
 
   .details {
     margin-top: 300px;
+  }
+}
+
+@media (min-width: 600px) {
+  .content .heading {
+    margin-top: 50px;
   }
 }
