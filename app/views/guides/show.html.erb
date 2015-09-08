@@ -1,3 +1,9 @@
+<% content_for :styletags do %>
+    <%= stylesheet_link_tag 'guides', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
+
+<header id="main-header"><%= image_tag @guide.image %></header>
+
 <article>
   <h1>
     <%= @guide.title %>
@@ -5,7 +11,5 @@
   <%= render partial: 'meta', locals: { guide: @guide } %>
   <%= markdown(@guide.content) %>
   <hr/>
-  <p class="action">
-    <%= link_to '? Back to Overview', guides_path %>
-  </p>
+  <!-- TODO: Link back to relevant action -->
 </article>

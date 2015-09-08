@@ -7,6 +7,7 @@
 <% content_for :jstags do %>
     <%= javascript_include_tag 'tether.min', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'select.min', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'jquery.payment', 'data-turbolinks-track' => true %>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <%= javascript_include_tag 'payments', 'data-turbolinks-track' => true %>
 <% end %>
@@ -55,7 +56,6 @@
     </div>
   </div>
 
-  <!-- TODO: Build in input length restriction -->
   <%= form_tag payments_path, id: 'payment-form' do %>
       <div class="blue-top">
         <h3>Payment<br>Details</h3>
@@ -66,7 +66,7 @@
         <div class="form-row">
           <label>
             <span>Card Number</span>
-            <input type="text" size="20" data-stripe="number">
+            <input type="tel" size="20" data-stripe="number" class="cc-num">
           </label>
         </div>
 
@@ -89,11 +89,11 @@
             </select>
           </label>
           <label>
-            <input id="year-input" type="text" size="4" data-stripe="exp-year" placeholder="Year">
+            <input id="year-input" type="tel" size="4" data-stripe="exp-year" placeholder="Year">
           </label>
           <label>
             <span>CVC</span>
-            <input type="text" size="4" data-stripe="cvc"/>
+            <input type="tel" size="4" data-stripe="cvc" class="cc-cvc">
           </label>
         </div>
       </div>

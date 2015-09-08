@@ -17,3 +17,8 @@
 
 $(document).ready ->
   $('.flash').animate transform: 'translateY(-75px)'
+  $(window).scroll ->
+    setTimeout (->
+      $('.flash').animate transform: 'translateY(75px)'
+      return
+    ), 1500

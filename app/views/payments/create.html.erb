@@ -10,4 +10,9 @@
 <% end %>
 
 <%= render 'partials/navbar' %>
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+
+<div id="receipt-header" class="content">
+  <h2>
+    Thanks! You're well on your way to becoming a BitCoin <%= params[:account_type] %>!
+  </h2>
+</div>

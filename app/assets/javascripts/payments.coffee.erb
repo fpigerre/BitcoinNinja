@@ -1,7 +1,6 @@
 masterChecked = true
 apprenticeChecked = false
 
-# jQuery $(document).ready()
 $(document).ready ->
     master = $('#master')
     apprentice = $('#apprentice')
@@ -38,7 +37,11 @@ $(document).ready ->
         el: document.querySelector('label select')
 
 jQuery ($) ->
+    $('.cc-num').payment 'formatCardNumber'
+    $('#year-input').payment 'restrictNumeric'
+    $('.cc-cvc').payment 'formatCardCVC'
     Stripe.setPublishableKey '<%= Stripe.api_key = Rails.configuration.stripe[:publishable_key] %>'
+
     $('#payment-form').on 'submit', (event) ->
         $form = $(this)
 

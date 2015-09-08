@@ -4,6 +4,7 @@
 
 body {
   background-image: image-url('city.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -212,6 +213,16 @@ body {
   }
 }
 
+#receipt-header {
+  color: white;
+  font-family: $heading-stack;
+  text-align: center;
+
+  h2 {
+    vertical-align: middle;
+  }
+}
+
 @media (min-width: 600px) {
   .center-form {
     display: inline-block;
@@ -238,6 +249,10 @@ body {
       margin: 40px 7%;
       width: 30%;
     }
+  }
+
+  #receipt-header {
+    padding: 150px 20px;
   }
 }
 
