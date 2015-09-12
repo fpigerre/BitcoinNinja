@@ -2,14 +2,33 @@
     <%= stylesheet_link_tag 'guides/show', media: 'all', 'data-turbolinks-track' => true %>
 <% end %>
 
-<header id="main-header"><%= image_tag @guide.image %></header>
+<style>
+    #main-header {
+        background-image: url("../images/<%= @guide.image %>");
+    }
+</style>
+
+<header id="main-header"></header>
+
+<div class="sidebar">
+  <%= link_to '', user_root_path, class: 'fa fa-long-arrow-left' %>
+  <%= link_to '', user_root_path, class: 'fa fa-heart-o' %>
+  <%= link_to '', user_root_path, class: 'fa fa-share-alt' %>
+</div>
 
 <article>
   <h1>
     <%= @guide.title %>
   </h1>
-  <%= render partial: 'meta', locals: { guide: @guide } %>
-  <%= markdown(@guide.content) %>
+  <%= render partial: 'meta', locals: {guide: @guide} %>
+  <div class="text">
+    <%= markdown(@guide.content) %>
+  </div>
   <hr/>
   <!-- TODO: Link back to relevant action -->
 </article>
+
+<div class="links">
+  <hr>
+  <!-- TODO: Perhaps place an author message here or in the sidebar -->
+</div>

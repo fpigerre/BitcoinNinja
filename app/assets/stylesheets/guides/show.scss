@@ -1,3 +1,68 @@
 @import 'partials/_constants';
 @import 'partials/_mixins';
 @import 'partials/_navbar';
+
+@import url(https://fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic);
+
+header {
+  background-position: center 42%;
+  background-size: cover;
+  height: 250px;
+}
+
+.sidebar {
+  font-size: 22px;
+  margin-top: 20px;
+  text-align: center;
+
+  a {
+    color: #333333;
+  }
+
+  .fa {
+    padding: 0 15px;
+  }
+}
+
+article {
+  margin: 40px 20px 0 20px;
+
+  h1 {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 46px;
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+
+  .meta {
+    color: #B9B9B9;
+    font-family: Muli, sans-serif;
+    margin-bottom: 45px;
+  }
+
+  .text {
+    font-family: Muli, sans-serif;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 600px) {
+  .sidebar {
+    font-size: 24px;
+    margin-left: 15px;
+    margin-top: 30px;
+    position: fixed;
+    top: 260px;
+
+    .fa {
+      display: block;
+      padding: 10px;
+    }
+  }
+
+  article {
+    margin: auto;
+    width: 60%;
+  }
+}

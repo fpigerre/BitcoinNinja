@@ -9,6 +9,7 @@
       <%= link_to 'How it Works', guide_path(:about) %>
     </div>
     <div class="right">
+      <%= link_to 'SETTINGS', edit_user_registration_path, class: 'settings' %>
       <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete, class: 'logout') %>
     </div>
   </nav>

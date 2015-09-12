@@ -25,6 +25,8 @@ nav {
   }
 
   .right {
+    float: right;
+
     .signup {
       background-color: $brand-color;
       color: white;
@@ -40,11 +42,11 @@ nav {
       }
     }
 
+    .settings,
     .logout {
-      float: right;
+      display: inline-block;
       font-size: 14px;
-      margin-top: 20px;
-      margin-right: 50px;
+      margin: 20px;
     }
   }
 }
