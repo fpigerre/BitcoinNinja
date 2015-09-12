@@ -7,7 +7,7 @@
         <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete, class: 'logout') %>
       </div>
   <% else %>
-      <div class="left">
+      <div class="left bar">
         <%= yield :link_structure %>
       </div>
       <div class="right bar">

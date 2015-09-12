@@ -3,8 +3,9 @@
 @import 'partials/_navbar';
 
 header {
-  background-color: $brand-color;
-  height: 250px;
+  background-image: image-url('hills.jpg');
+  background-size: cover;
+  height: 100vh;
 
   nav {
     background-color: transparent;
@@ -14,14 +15,19 @@ header {
       color: white;
     }
   }
+
+  h1 {
+    color: white;
+    font-family: $alternate-stack;
+    font-size: 72px;
+    font-weight: 300;
+    float: left;
+    margin: 200px 150px;
+  }
 }
 
 .guides {
   .column {
-    display: inline-block;
-    vertical-align: top;
-    width: 33%;
-
     &:nth-of-type(2) {
       border-left: 1px solid lightgray;
       border-right: 1px solid lightgray;
@@ -82,6 +88,10 @@ header {
   }
 }
 
-#main-header img {
-  width: 100%;
+@media (min-width: 800px) {
+  .guides .column {
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+  }
 }

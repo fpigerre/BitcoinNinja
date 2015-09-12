@@ -5,13 +5,20 @@ nav {
   box-shadow: 1px 1px 3px #E1E1E1;
   height: 60px;
 
-  .left.logout,
-  .right.logout {
+  .logout {
     display: inline-block;
   }
 
+  .bar {
+    display: block;
+  }
+
+  .right.bar {
+    width: 100%;
+  }
+
   .right.logout {
-    float: right;
+    margin-right: 10%;
   }
 
   .left {
@@ -53,19 +60,17 @@ nav {
 
 @media (min-width: 600px) {
   nav {
-    .left,
-    .right {
+    .bar {
       display: inline-block;
-      height: 100%;
     }
 
-    .right {
-      float: right;
+    .right.bar {
+      width: initial;
+    }
 
-      .signup {
-        float: right;
-        margin-top: 0;
-      }
+    .right .signup {
+      float: right;
+      margin-top: 0;
     }
   }
 }

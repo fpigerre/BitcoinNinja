@@ -4,15 +4,17 @@
 
 <header>
   <nav>
-    <div class="left">
+    <div class="left logout">
       <%= link_to 'Home', root_path, class: 'active' %>
-      <%= link_to 'How it Works', guide_path(:about) %>
+      <%= link_to 'How it Works', user_about_path %>
     </div>
-    <div class="right">
+    <div class="right logout">
       <%= link_to 'SETTINGS', edit_user_registration_path, class: 'settings' %>
       <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete, class: 'logout') %>
     </div>
   </nav>
+
+  <h1>Boom!</h1>
 </header>
 
 <div class="guides">
