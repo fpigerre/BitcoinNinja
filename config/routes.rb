@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :guides, only: [:index, :show, :about]
 
   # Authentication and Devise routes
-  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'}
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :edit => 'settings'}
 
   # Payment Routes
   resources :payments

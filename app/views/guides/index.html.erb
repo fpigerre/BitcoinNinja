@@ -1,5 +1,5 @@
 <% content_for :styletags do %>
-    <%= stylesheet_link_tag 'guides', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'guides/index', media: 'all', 'data-turbolinks-track' => true %>
 <% end %>
 
 <header>
@@ -25,12 +25,14 @@
                   <%= image_tag guide.image %>
               <% end %>
               <div class="caption">
-                <h1><%= link_to guide.title, guide_path(guide) %></h1>
                 <%= render partial: 'meta', locals: {guide: guide} %>
+                <h1><%= link_to guide.title, guide_path(guide) %></h1>
                 <%= markdown(guide.excerpt) %>
-                <% if guide.has_more_text? %>
-                    <%= link_to 'Read more', guide_path(guide), class: 'continue' %>
-                <% end %>
+                <div class="links">
+                  <% if guide.has_more_text? %>
+                      <%= link_to 'Read more', guide_path(guide), class: 'continue' %>
+                  <% end %>
+                </div>
               </div>
               <% if (count % 2) == 0 %>
                   <%= image_tag guide.image %>
@@ -39,4 +41,8 @@
         <% end %>
       </div>
   <% end %>
+</div>
+
+<div class="featured">
+
 </div>

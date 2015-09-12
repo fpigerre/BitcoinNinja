@@ -12,7 +12,8 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( home.css )
 Rails.application.config.assets.precompile += %w( devise.css )
 Rails.application.config.assets.precompile += %w( payments.css )
-Rails.application.config.assets.precompile += %w( guides.css )
+Rails.application.config.assets.precompile += %w( guides/index.css )
+Rails.application.config.assets.precompile += %w( guides/show.css )
 
 Rails.application.config.assets.precompile += %w( select-theme-default.css )
 

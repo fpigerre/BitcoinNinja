@@ -1,6 +1,6 @@
-@import 'partials/constants';
-@import 'partials/mixins';
-@import 'partials/navbar';
+@import 'partials/_constants';
+@import 'partials/_mixins';
+@import 'partials/_navbar';
 
 header {
   background-color: $brand-color;
@@ -29,23 +29,39 @@ header {
 
     article {
       img {
+        display: block;
         width: 100%;
       }
 
       .caption {
         padding: 20px 40px;
 
-        h1 a {
-          color: gray;
-          font-family: $alternate-stack;
-          font-size: 20px;
-          font-weight: 100;
+        .meta {
+          color: #b9b9b9;
+          font-family: $heading-stack;
+          font-size: 11px;
+        }
+
+        h1 {
+          margin: 10px 0;
+
+          a {
+            color: gray;
+            font-family: $alternate-stack;
+            font-size: 20px;
+            font-weight: 100;
+          }
         }
 
         p {
           color: gray;
           font-family: $alternate-stack;
+          font-size: 12px;
         }
+      }
+
+      .links {
+        margin: 30px 0;
       }
 
       .continue {
