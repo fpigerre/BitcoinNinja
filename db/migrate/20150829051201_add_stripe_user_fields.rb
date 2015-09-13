@@ -4,6 +4,6 @@ class AddStripeUserFields < ActiveRecord::Migration
     add_column :users, :plan, :string
     add_column :users, :plan_expiry, :datetime
 
-    add_index :users, :customer_id,          unique: true
+    add_index :users, :customer_id, unique: true
   end
 end

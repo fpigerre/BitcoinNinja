@@ -4,6 +4,7 @@
         <%= yield :link_structure %>
       </div>
       <div class="right logout">
+        <%= link_to 'SETTINGS', edit_user_registration_path, class: 'settings' %>
         <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete, class: 'logout') %>
       </div>
   <% else %>

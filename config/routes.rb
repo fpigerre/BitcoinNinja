@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   resources :guides, only: [:index, :show]
 
   # Authentication and Devise routes
-  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :edit => 'settings'}
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :edit => 'settings'}, :controllers => {:registrations => 'registrations'}
+  devise_scope :user do
+    get 'users/:username', to: 'registrations#show'
+  end
 
   # Payment Routes
   resources :payments

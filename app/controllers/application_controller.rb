@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:customer_id, :plan, :plan_expiry) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :name) }
   end
 
   def after_sign_in_path_for(resource_or_scope)

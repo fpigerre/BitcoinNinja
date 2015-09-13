@@ -49,7 +49,8 @@ form {
 @include placeholder-font(#696969, Lato, sans-serif, 14px, 500);
 
 input[type=email],
-input[type=password] {
+input[type=password],
+input[type=text] {
   background-color: #E7E7E7;
   border: 1px solid #CDCDCD;
   border-radius: 3px;
